@@ -5,28 +5,31 @@ export default class NewGrowl extends Component{
   constructor(props){
     super(props);
     this._handleSubmit = this._handleSubmit.bind(this)
+    this._growlLength = this._growlLength.bind(this)
+  }
+
+  _growlLength(){
+    console.log(this.refs.growl.value.length);
   }
 
   _handleSubmit(e){
       e.preventDefault();
-      let user = this.props.user;
-      console.log('form submit user: ', user);
       let title = this.refs.title.value
-      console.log('form submit title: ',title);
       let growl = this.refs.growl.value;
-      console.log('form submit growl: ',growl);
       var growlObj = {
         title,
         growl,
         [this.props.user.uid]: true,
-        username: this.props.user.displayName
+        username: this.props.user.displayName,
+        created_at: new Date()
       }
-      console.log('growlObj', growlObj);
       this.props.firebase.database().ref(`/growls`).push(growlObj).then(()=>{
         this.refs.title.value = "";
         this.refs.growl.value = ""
       }).catch((e)=>{
-        alert('Too Long');
+        // let tooMany = growl.length-141;
+        // _tooLong(tooMany);
+        alert(`Your growl is ${growl.length - 141} characters too long!`);
         console.log('e',e);
       });
 
