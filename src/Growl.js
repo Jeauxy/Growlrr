@@ -24,7 +24,9 @@ class Growl extends Component {
 
   render() {
     return(
-      <li>
+
+    <div className="all-growls">
+      <li className="list">
         Title: {this.props.growl.title}
         <br/>
         Growl: {this.props.growl.growl}
@@ -32,8 +34,9 @@ class Growl extends Component {
         By: {this.props.growl.username}
         <br/>
         {' '}
-        <span>{this._sessionDelete(this.props.growl.user_id)}</span>
+        <span className="delete-link">{this._sessionDelete(this.props.growl.user_id)}</span>
       </li>
+    </div>
     )
   }
 }

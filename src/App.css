@@ -2,6 +2,45 @@ body{
   background-color: rgb(11, 95, 229);
 }
 
+.header{
+  text-align: center;
+  padding: 25px 25px;
+}
+
+.NewGrowl{
+  display: inline-block;
+}
+
+.NewTitle{
+  display: inline-block;
+}
+
+.form-group{
+  display: inline-block;
+}
+
+.NewGrowl{
+  padding-left: 10px;
+}
+
+.NewGrowlButton{
+  padding-top: 20px;
+}
+
+.GrowlButton{
+ padding: 15px 30px;
+ border-radius: 5px;
+ font-size: 14px;
+ font-weight: bold;
+ background-color: rgb(78, 244, 66);
+}
+
+.list{
+  text-align: left;
+  list-style: none;
+  padding: 10px 10px;
+}
+
 .button{
   color: white;
   padding: 10px 15px;
@@ -11,11 +50,15 @@ body{
   text-align: right;
 }
 
-.login{
-  text-align: right;
-  padding-top: 15px;
+.header{
+  display: inline-block;
 }
 
+.login{
+  text-align: right;
+  padding-bottom: 50px;
+  padding-right: 5px;
+}
 
 .App {
   text-align: center;

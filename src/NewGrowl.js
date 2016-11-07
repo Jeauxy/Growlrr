@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './App.css';
 
 export default class NewGrowl extends Component{
   constructor(props){
@@ -37,14 +37,20 @@ export default class NewGrowl extends Component{
 
   render(){
     return(
-      <form onSubmit={this._handleSubmit}>
-        <label>Title: </label>
-        <input className="NewGrowl" type="text" ref="title"/>
-        <br/>
-        <label>Growl: </label>
-        <input className="NewGrowl" type="text" ref="growl"/>
-        <br/>
-        <input className="NewGrowl" type="submit" value="Growl!" />
+      <form className="form-group" onSubmit={this._handleSubmit}>
+        <div className="form-2">
+          <div className="NewTitle">
+            <label>Title: </label>
+            <input  type="text" ref="title" placeholder="Enter Growl Title Here"/>
+          </div>
+          <div className="NewGrowl">
+            <label>Growl: </label>
+            <input type="text" ref="growl" placeholder="Enter New Growl Here"/>
+          </div>
+          <div className="NewGrowlButton">
+            <button className="GrowlButton" type="submit">Growl!</button>
+          </div>
+        </div>
       </form>
     )
 

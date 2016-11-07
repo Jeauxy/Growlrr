@@ -62,10 +62,10 @@ _sessionButton() {
           <h1>Growlrr User Auth</h1>
         </div>
         <div className="login">
-          {this._sessionButton()}
+            <h4>Welcome {this.state.user.displayName}</h4>
+            {this._sessionButton()}
         </div>
-        <h1 className="header">Welcome {this.state.user.displayName}</h1>
-        <div className='form'>
+        <div>
           {this._sessionForm()}
         </div>
         <div>
