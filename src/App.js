@@ -5,16 +5,17 @@ import firebase from './utils/firebase';
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
 import _ from 'lodash';
+import NewGrowl from './NewGrowl';
 
 class App extends Component {
   constructor(props){
     super(props);
 
     this.state = {
-      user: {}
+      user: [],
+      growls: []
     }
   }
-
 
   componentDidMount(){
     firebase.auth().onAuthStateChanged(user => {
@@ -26,6 +27,10 @@ class App extends Component {
     // No user is signed in.
   }
   });
+  firebase.database().ref('/Growlrr/Growls').on('value', snapshot => {
+    let growls = snapshot.val();
+    this.setState({growls})
+  })
 }
 
 
@@ -52,6 +57,14 @@ _sessionButton() {
         <div className="login">
 
           {this._sessionButton()}
+        </div>
+        <NewGrowl user={this.state.user} firebase={firebase} />
+        <div>
+          <ul>
+            {_.map(this.state.growls, (growl, id) =>
+                <Growl id={id} content={growl} key={id} firebase={firebase} />
+            )}
+          </ul>
         </div>
       </div>
     );
