@@ -27,7 +27,7 @@ class App extends Component {
     // No user is signed in.
   }
   });
-  firebase.database().ref('/Growlrr/Growls').on('value', snapshot => {
+  firebase.database().ref('/growls').on('value', snapshot => {
     let growls = snapshot.val();
     this.setState({growls})
   })
