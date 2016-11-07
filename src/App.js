@@ -31,7 +31,7 @@ class App extends Component {
 
 _sessionButton() {
     if (_.isEmpty(this.state.user)) {
-      return <LoginButton firebase={firebase}>
+      return <LoginButton class="buttons" firebase={firebase}>
         Login
       </LoginButton>
     } else {
@@ -48,11 +48,10 @@ _sessionButton() {
           <img src={logo} className="App-logo" alt="logo" />
           <h1>Growlrr User Auth</h1>
         </div>
-          <h2>Welcome {this.state.user.displayName}</h2>
         <div className="login">
-
           {this._sessionButton()}
         </div>
+        <h1 class="header">Welcome {this.state.user.displayName}</h1>
       </div>
     );
   }
