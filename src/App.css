@@ -1,3 +1,19 @@
+.button{
+  margin: 0 auto;
+  display: block;
+  padding: 25px 80px;
+  font-size: 20px;
+  background-color: rgb(92, 152, 249);
+  border-radius: 5px;
+}
+
+.login{
+  padding-top: 50px;
+}
+
+body{
+  background-color: rgb(11, 95, 229);
+}
 .App {
   text-align: center;
 }

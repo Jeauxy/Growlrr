@@ -1,13 +1,13 @@
-import firebase from "firebase";
+import firebase from 'firebase';
 
-// Initialize Firebase
+
 const config = {
-  apiKey: "AIzaSyB87Fr0F0dicx_65VnzviYs7Doe5EI-L74",
-  authDomain: "growlrr-b210e.firebaseapp.com",
-  databaseURL:"https://growlrr-b210e.firebaseio.com",
-  storageBucket: "",
-  messagingSenderId: "278457323900"
-};
+    apiKey: "AIzaSyCvldY8SQJDbKURgiBZqIVOeGm0XFb3e8g",
+    authDomain: "ga-todo-list-46567.firebaseapp.com",
+    databaseURL: "https://ga-todo-list-46567.firebaseio.com",
+    storageBucket: "ga-todo-list-46567.appspot.com",
+    messagingSenderId: "769545845017"
+  };
 
 firebase.initializeApp(config);
 
