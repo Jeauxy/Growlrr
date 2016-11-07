@@ -15,15 +15,19 @@ export default class NewGrowl extends Component{
       console.log('form submit title: ',title);
       let growl = this.refs.growl.value;
       console.log('form submit growl: ',growl);
-      this.props.firebase.database().ref(`/Growlrr/Growls/`).push({
+      var growlObj = {
         title,
         growl,
-        user_id: this.props.user.uid,
-        username: this.props.user.displayName,
-        created_at: new Date(),
-      }).then(()=>{
+        [this.props.user.uid]: true,
+        username: this.props.user.displayName
+      }
+      console.log('growlObj', growlObj);
+      this.props.firebase.database().ref(`/growls`).push(growlObj).then(()=>{
         this.refs.title.value = "";
         this.refs.growl.value = ""
+      }).catch((e)=>{
+        alert('Too Long');
+        console.log('e',e);
       });
 
     }
