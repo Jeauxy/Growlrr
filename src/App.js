@@ -6,7 +6,7 @@ import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
 import _ from 'lodash';
 import NewGrowl from './NewGrowl';
-
+import Growl from './Growl';
 class App extends Component {
   constructor(props){
     super(props);
@@ -46,6 +46,14 @@ _sessionButton() {
     }
   }
 
+  _sessionForm() {
+      if (_.isEmpty(this.state.user)) {
+        return
+      } else {
+        return <NewGrowl user={this.state.user} firebase={firebase} />
+      }
+    }
+
   render(){
     return (
       <div className="App">
@@ -57,14 +65,16 @@ _sessionButton() {
           {this._sessionButton()}
         </div>
         <h1 className="header">Welcome {this.state.user.displayName}</h1>
+        <div className='form'>
+          {this._sessionForm()}
+        </div>
         <div>
           <ul>
             {_.map(this.state.growls, (growl, id) =>
-                <Growl id={id} content={growl} key={id} firebase={firebase} />
+                <Growl id={id} growl={growl} key={id} firebase={firebase} />
             )}
           </ul>
         </div>
-        <NewGrowl user={this.state.user} firebase={firebase} />
       </div>
     );
   }
