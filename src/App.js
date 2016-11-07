@@ -59,11 +59,11 @@ _sessionButton() {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1>Growlrr User Auth</h1>
+          <h1>Growlrr React!</h1>
         </div>
         <div className="login">
-            <h4>Welcome {this.state.user.displayName}</h4>
-            {this._sessionButton()}
+          <h4>{this.state.user.displayName}</h4>
+          {this._sessionButton()}
         </div>
         <div>
           {this._sessionForm()}

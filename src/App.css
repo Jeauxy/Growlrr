@@ -2,9 +2,18 @@ body{
   background-color: rgb(11, 95, 229);
 }
 
+.all-growls{
+  display: block;
+  margin: 5px;
+}
+
+.delete-link{
+text-align: right;
+}
+
 .header{
   text-align: center;
-  padding: 25px 25px;
+  padding: 20px 20px;
 }
 
 .NewGrowl{
@@ -38,7 +47,7 @@ body{
 .list{
   text-align: left;
   list-style: none;
-  padding: 10px 10px;
+  padding: 10px;
 }
 
 .button{

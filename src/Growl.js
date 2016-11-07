@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
+import './App.css';
 
 class Growl extends Component {
   constructor(props) {
@@ -10,7 +11,6 @@ class Growl extends Component {
   }
   _sessionDelete() {
     let array = Object.keys(this.props.growl);
-    // array[0] is the author's user_id
       if (this.props.user.uid === array[0]) {
         return <a href='#' onClick={this._handleDelete}>Delete</a>
       } else {
@@ -31,12 +31,14 @@ class Growl extends Component {
       <li className="list">
         Title: {this.props.growl.title}
         <br/>
-        Growl: {this.props.growl.growl}
         <br/>
         By: {this.props.growl.username}
         <br/>
-        {' '}
-        <span className="delete-link">{this._sessionDelete()}</span>
+        <br/>
+        Growl: {this.props.growl.growl}
+        <br/>
+        <br/>
+        {this._sessionDelete()}
       </li>
     </div>
     )
