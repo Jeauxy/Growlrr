@@ -72,7 +72,7 @@ _sessionButton() {
           <ul>
             {_.map(this.state.growls, (growl, id) =>
                 <Growl user={this.state.user} id={id} growl={growl} key={id} firebase={firebase} />
-            )}
+            ).reverse()}
           </ul>
         </div>
       </div>
