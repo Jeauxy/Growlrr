@@ -9,7 +9,7 @@ export default class NewGrowl extends Component{
   }
 
   _growlLength(){
-    console.log(this.refs.growl.value.length);
+    // console.log(this.refs.growl.value.length);
   }
 
   _handleSubmit(e){
@@ -35,27 +35,30 @@ export default class NewGrowl extends Component{
 
     }
 
+// _handleClick(e){
+//   e.preventDefault()
+//   let provider = new
+//   this.props.firebase.auth.GoogleAuthProvider();
+//   this.props.firebase.auth().signInWithPopup(provider)
+// }
+
   render(){
     return(
-
-      <div className="New-Growl">
-        <h1>Growls!</h1>
-        <form className="form-group" onSubmit={this._handleSubmit}>
-          <div className="form-2">
-            <div className="NewTitle">
-              <label>Title: </label>
-              <input  type="text" ref="title" placeholder="Enter Growl Title Here"/>
-            </div>
-            <div className="NewGrowl">
-              <label>Growl: </label>
-              <input type="text" ref="growl" placeholder="Enter New Growl Here"/>
-            </div>
-            <div className="NewGrowlButton">
-              <button className="GrowlButton" type="submit">Growl!</button>
-            </div>
+      <form className="form-group" onSubmit={this._handleSubmit}>
+        <div className="form-2">
+          <div className="NewTitle">
+            <label>Title: </label>
+            <input  type="text" ref="title" placeholder="Enter Growl Title Here"/>
           </div>
-        </form>
-      </div>
+          <div className="NewGrowl">
+            <label>Growl: </label>
+            <input type="text" ref="growl" placeholder="Enter New Growl Here"/>
+          </div>
+          <div className="NewGrowlButton">
+            <button className="GrowlButton" type="submit">Growl!</button>
+          </div>
+        </div>
+      </form>
     )
 
   }
