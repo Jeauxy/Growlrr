@@ -10,7 +10,6 @@ class Growl extends Component {
   }
   _sessionDelete() {
     let array = Object.keys(this.props.growl);
-    console.log(array)
     // array[0] is the author's user_id
       if (this.props.user.uid === array[0]) {
         return <a href='#' onClick={this._handleDelete}>Delete</a>
@@ -26,8 +25,6 @@ class Growl extends Component {
   }
 
   render() {
-    let array = Object.keys(this.props.growl);
-    console.log(array)
     return(
       <li>
         Title: {this.props.growl.title}
