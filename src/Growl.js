@@ -19,6 +19,8 @@ class Growl extends Component {
         Title: {this.props.growl.title}
         <br/>
         Growl: {this.props.growl.growl}
+        <br/>
+        By: {this.props.growl.username}
         {' '}
         <a href='#' onClick={this._handleDelete}>Delete</a>
       </li>

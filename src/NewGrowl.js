@@ -19,6 +19,7 @@ export default class NewGrowl extends Component{
         title,
         growl,
         user_id: this.props.user.uid,
+        username: this.props.user.displayName,
         created_at: new Date(),
       }).then(()=>{
         this.refs.title.value = "";
