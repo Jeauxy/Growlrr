@@ -56,7 +56,7 @@ _sessionButton() {
         <div className="login">
           {this._sessionButton()}
         </div>
-        <NewGrowl user={this.state.user} firebase={firebase} />
+        <h1 className="header">Welcome {this.state.user.displayName}</h1>
         <div>
           <ul>
             {_.map(this.state.growls, (growl, id) =>
@@ -64,7 +64,7 @@ _sessionButton() {
             )}
           </ul>
         </div>
-        <h1 class="header">Welcome {this.state.user.displayName}</h1>
+        <NewGrowl user={this.state.user} firebase={firebase} />
       </div>
     );
   }
