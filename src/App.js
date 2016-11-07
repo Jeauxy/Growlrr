@@ -46,7 +46,7 @@ _sessionButton() {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1>Growlrr Firebase</h1>
+          <h1>Growlrr User Auth</h1>
         </div>
           <h2>Welcome {this.state.user.displayName}</h2>
         <div className="login">
