@@ -16,7 +16,9 @@ class Growl extends Component {
   render() {
     return(
       <li>
-        {this.props.growl.content}
+        Title: {this.props.growl.title}
+        <br/>
+        Growl: {this.props.growl.growl}
         {' '}
         <a href='#' onClick={this._handleDelete}>Delete</a>
       </li>
